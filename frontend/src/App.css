@@ -8,7 +8,9 @@
     font-size: 15px;
     color: gray;
  }
-
+.logo-icon {
+   width: 40px;
+}
  .link {
     text-decoration: none;
     color: #030f27;

@@ -13,7 +13,10 @@ function Navbar() {
             <div className="row justify-content-center align-items-center mx-auto">
               <div className="col-12 col-lg-3 p-0">
                 <div className="display-3 fw-bold py-2 text-center text-lg-start d-none d-lg-block">
-                  Beta
+                 <div className="d-flex flex-rowalign-items-center">
+                 <img src="./Logo.svg" className="logo-icon" alt=""  />
+                 <h3 className="m-0 text-dark-blue">ETA ECO</h3>
+                 </div>
                 </div>
               </div>
               <div className="col-4 col-lg-3 sideLine">
@@ -47,7 +50,7 @@ function Navbar() {
           </div>
           <hr className="my-0 d-lg-none" />
           <div className="text-center display-3 fw-bold mb-2 d-lg-none">
-            LOGO
+            BETA ECO
           </div>
           <div className="bg-dark-blue" data-bs-theme="dark">
             <nav className="navbar navbar-expand-lg justify-content-center justify-content-lg-between p-0">

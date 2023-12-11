@@ -134,20 +134,24 @@ function Contact() {
                         </div>
                       </form>
                     </div>
+					
                   </div>
                   <div className="col-lg-4 col-md-5 d-flex align-items-stretch">
                     <div className=" bg-dark-blue w-100 p-md-5 p-4">
                       <h2 className="text-light mb-4">Let's get in touch</h2>
                       <div className=" w-100 d-flex align-items-start mb-4">
-                        <div className="text pl-3 d-flex flex-row">
-                          <i
+                        <div className="">
+                          <Link 
+						 className="text pl-3 d-flex flex-row text-decoration-none" 
+						  to="https://maps.app.goo.gl/JPQu3HUULwYLAhUu8">
+						  <i
                             className="fa fa-map-marker text-light pe-3"
                             style={{ fontSize: "1.5rem" }}
                           ></i>
                           <p className="text-white">
-                            Adresse : 198 West 21th Street, Suite 721 New York
-                            NY 10016
+                            Adresse : Qaurtier El Qodess, Chichaoua
                           </p>
+						  </Link>
                         </div>
                       </div>
                       <div className=" w-100 d-flex align-items-center mb-4">
