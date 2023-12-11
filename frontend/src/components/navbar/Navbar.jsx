@@ -93,7 +93,7 @@ function Navbar() {
                   </li>
                   <li className="nav-item">
                     <NavLink className="nav-link px-lg-3" activeclassname="active" exact="true" to="/blogs">
-                      Blogs
+                      Blog
                     </NavLink>
                   </li>
                   

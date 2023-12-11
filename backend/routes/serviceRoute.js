@@ -7,11 +7,14 @@ router.route("/")
 .post(verifyTokenAndAdmin, addService)
 .get(getAllTServices)
 
+router.route("/count")
+.get(getServicesCount)
+
 router.route("/:id")
 .get(validateID, getService)
 .delete(validateID, verifyTokenAndAdmin, deleteService )
 .put(validateID, verifyTokenAndAdmin, updateService)
-router.route("/count")
-.get(getServicesCount)
+
+
 
 module.exports = router;

@@ -88,6 +88,7 @@ module.exports.updateService = asyncHandler(async (req, res) => {
   );
   res.status(200).json(updateService);
 });
+
 module.exports.getServicesCount = asyncHandler(async (req, res) => {
   const count = await Service.countDocuments();
   res.status(200).json(count);

@@ -18,7 +18,20 @@ export function fetchServices(search) {
     }
   };
 }
-
+export function updateService(newService, serviceId) {
+  return async (dispatch, getState) => {
+    try {
+      const { data } = await request.put(`/api/services/${serviceId}`, newService, {
+        headers: {
+          Authorization: "Bearer " + getState().auth.user.token,
+        },
+      });
+      dispatch(serviceActions.setService(data));
+    } catch (error) {
+      toast.error(error);
+    }
+  };
+}
 export function getSingleService(serviceId) {
   return async (dispatch) => {
     try {

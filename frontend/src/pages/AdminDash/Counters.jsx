@@ -41,6 +41,7 @@ function CounterBox({ iconClass, initialValue, label }) {
 }
 function Counters() {
   const { servicesCount} = useSelector(state => state.service)
+  console.log(servicesCount)
   const { commentsCount} = useSelector(state => state.comment)
   const {  userCount } = useSelector((state) => state.user);
   const {  blogsCount } = useSelector((state) => state.blog);
