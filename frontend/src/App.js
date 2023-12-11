@@ -32,6 +32,7 @@ import AddService from "./pages/AdminDash/AddService";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import SingleService from "./pages/SingleService";
 
 AOS.init({duration : 1000});
 
@@ -91,6 +92,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/services/:id" element={<SingleService />} />
 
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile/:id" element={<Profile />} />

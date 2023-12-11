@@ -19,6 +19,17 @@ export function fetchServices(search) {
   };
 }
 
+export function getSingleService(serviceId) {
+  return async (dispatch) => {
+    try {
+      const { data } = await request.get(`api/services/${serviceId}`);
+      dispatch(serviceActions.setService(data));
+    } catch (error) {
+      toast.error(error);
+    }
+  };
+}
+
 //create category
 export function addService(newServ) {
   return async (dispatch, getState) => {

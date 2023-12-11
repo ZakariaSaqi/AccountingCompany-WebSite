@@ -47,6 +47,15 @@ module.exports.getAllTServices = asyncHandler(async (req, res) => {
   res.status(200).json(services);
 });
 
+module.exports.getService = asyncHandler(async (req, res) => {
+  const service = await Service.findById(req.params.id)
+
+  if (!service) return res.status(404).json({ message: "Service not found !" });
+
+  res.status(200).json(service);
+});
+
+
 module.exports.deleteService = asyncHandler(async (req, res) => {
   const service = await Service.findById(req.params.id);
   if (!service) return res.status(404).json({ message: "Service not found" });

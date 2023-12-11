@@ -1,10 +1,11 @@
 import React from "react";
-import {NavLink, Link } from "react-router-dom";
+import {NavLink, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from '../../redux/apiCalls/authCalls';
 
 function SidebarTest() {
     const { user } = useSelector((state) => state.auth);
+    const navigate = useNavigate()
     const dispatch = useDispatch();
   return (
     <div className="container-fluid bg-dark-blue" style={{width : "max-content"}} >
@@ -122,7 +123,11 @@ function SidebarTest() {
         <li><Link className="dropdown-item" to="/">Back Home ..</Link></li>
         <li><Link className="dropdown-item" to={`/profile/${user?._id}`}>Profile</Link></li>
         <li><hr className="dropdown-divider"/></li>
-        <li><Link className="dropdown-item" onClick={() => dispatch(logoutUser())} >LogOut</Link></li>
+        <li><Link className="dropdown-item" onClick={(e) => {
+            e.preventDefault();
+            dispatch(logoutUser())
+            navigate("/")
+        }} >LogOut</Link></li>
       </ul>
     </div>
         </div>

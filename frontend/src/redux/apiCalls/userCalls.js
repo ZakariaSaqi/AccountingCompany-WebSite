@@ -53,14 +53,16 @@ export function updateProfile(userId, profile) {
         }
       );
       dispatch(userActions.updateUserProfile(data));
-      const username =
+      const firstname =
         data?.firstname.charAt(0).toUpperCase() +
-        data?.firstname.slice(1) +
-        " " +
-        data?.lastname;
-      dispatch(authActions.setUsername(username));
+        data?.firstname.slice(1);
+      const lastname = data?.lastname;
+        
+      dispatch(authActions.setFirstname(firstname));
+      dispatch(authActions.setLastname(lastname));
       const user = JSON.parse(localStorage.getItem("AccountingUser"));
-      user.username = username;
+      user.lastname = lastname;
+      user.firstname = firstname;
       localStorage.setItem("AccountingUser", JSON.stringify(user));
     } catch (error) {
       toast.error(error);

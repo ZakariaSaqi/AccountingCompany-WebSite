@@ -4,11 +4,15 @@ const serviceSlice = createSlice({
     initialState : {
         services : [],
         servicesCount : null,
+        service: null,
     },
     reducers : {
          setServices(state, action) {
             state.services = action.payload
          },
+         setService(state, action) {
+            state.service = action.payload;
+          },
          addService(state, action){
             state.services.push(action.payload)
          },
