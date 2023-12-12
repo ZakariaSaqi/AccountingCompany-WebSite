@@ -21,13 +21,15 @@ function SingleService() {
 
   const deleteServicetHandler = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this service!",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce service !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
+      
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteService(id));
@@ -54,7 +56,7 @@ function SingleService() {
               className="btn btn-lg btn-info rounded-0 text-dark"
               style={{ width: "max-content" }}
             >
-              See all services
+              Voir tous les services
             </Link>
             {user?.isAdmin && (
               <div className="d-flex">

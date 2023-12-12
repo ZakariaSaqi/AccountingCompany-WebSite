@@ -50,7 +50,7 @@ module.exports.getAllTServices = asyncHandler(async (req, res) => {
 module.exports.getService = asyncHandler(async (req, res) => {
   const service = await Service.findById(req.params.id)
 
-  if (!service) return res.status(404).json({ message: "Service not found !" });
+  if (!service) return res.status(404).json({ message: "Service non trouvé" });
 
   res.status(200).json(service);
 });
@@ -58,12 +58,12 @@ module.exports.getService = asyncHandler(async (req, res) => {
 
 module.exports.deleteService = asyncHandler(async (req, res) => {
   const service = await Service.findById(req.params.id);
-  if (!service) return res.status(404).json({ message: "Service not found" });
+  if (!service) return res.status(404).json({ message: "Service non trouvé" });
 
   if (req.user.isAdmin) {
     await Service.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "Service has been deleted !" });
-  } else res.status(403).json({ message: "Acces denied !" });
+    res.status(200).json({ message: "Votre service a été supprimé" });
+  } else res.status(403).json({ message: "Accès refusé" });
 });
 
 module.exports.updateService = asyncHandler(async (req, res) => {
@@ -71,10 +71,10 @@ module.exports.updateService = asyncHandler(async (req, res) => {
   if (error) return res.status(400).json({ message: error.message });
 
   const service = await Service.findById(req.params.id);
-  if (!service) return res.status(404).json({ message: "Service not found !" });
+  if (!service) return res.status(404).json({ message: "Service non trouvé" });
 
   if (!req.user.isAdmin)
-    res.status(403).json({ message: "Acces denied, not allowed !" });
+    res.status(403).json({ message: "Accès refusé, non autorisé" });
 
   const updateService = await Service.findByIdAndUpdate(
     req.params.id,

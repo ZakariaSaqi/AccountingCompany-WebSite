@@ -18,7 +18,7 @@ function BlogSideBar() {
   return (
     <div className="col-md-3 ">
       <div>
-        <h2 class="text-dark-blue my-4 ">Latest blogs</h2>
+        <h2 class="text-dark-blue my-4 ">Derniers posts</h2>
         <ul class="list-unstyled">
           {blogs.map(blog => (
             <li class="media d-flex flex-row">
@@ -44,7 +44,7 @@ function BlogSideBar() {
             to="/blogs"
             className="btn btn-lg btn-info rounded-0 w-100 text-dark"
           >
-            See all
+            Voir tous les posts
           </Link>
         </ul>
       </div>

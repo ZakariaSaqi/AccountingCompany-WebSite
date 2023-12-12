@@ -16,9 +16,9 @@ function CreateBlog() {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    if (title.trim() === "") return toast.error("Blog title is required");
-    if (text.trim() === "") return toast.error("Blog description is required");
-    if (!file) return toast.error("Blog image is required");
+    if (title.trim() === "") return  toast.error("Le titre de post est requis.");
+    if (text.trim() === "") return toast.error("La description de post est requise.");
+    if (!file) return toast.error("L'image du post est obligatoire.");
 
     const formData = new FormData();
     formData.append("title", title);
@@ -45,7 +45,7 @@ function CreateBlog() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-12">
-              <h2>Create Blog </h2>
+              <h2>Créer post </h2>
             </div>
           </div>
           <div className="container">
@@ -53,14 +53,14 @@ function CreateBlog() {
               <div className="row d-flex">
                 <div className="form-group mb-4">
                   <label className="label text-dark" for="email">
-                    Title
+                    Titre
                   </label>
                   <input
                     type="text"
                     className="form-control shadow-none rounded-0"
                     name="email"
                     id="email"
-                    placeholder="Title"
+                    placeholder="Titre"
                     onChange={(e) => setTitle(e.target.value)}
                   />
                 </div>
@@ -98,7 +98,7 @@ function CreateBlog() {
                 </div>
 
                 <div className="form-group mb-4 d-flex justify-content-center">
-                  <button
+                  <button style={{width:"6rem"}}
                     type="submit"
                     className="btn btn-lg btn-info rounded-0 text-dark"
                   >
@@ -111,7 +111,7 @@ function CreateBlog() {
                         visible={true}
                       />
                     ) : (
-                      "Create"
+                      "Créer"
                     )}
                   </button>
                 </div>

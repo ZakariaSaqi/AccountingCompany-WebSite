@@ -37,7 +37,7 @@ function AuthNavbar() {
           >
             <li>
               <Link className="dropdown-item" to={`/profile/${user?._id}`}>
-                Profile
+              Profil
               </Link>
             </li>
             <li>
@@ -45,7 +45,7 @@ function AuthNavbar() {
             </li>
             <li>
               <Link className="dropdown-item" onClick={() => dispatch(logoutUser())}>
-                LogOut
+              Déconnexion
               </Link>
             </li>
           </ul>
@@ -53,7 +53,7 @@ function AuthNavbar() {
       ) : (
         <li className="nav-item ">
           <Link to="/login" className="btn  border border-white rounded-0">
-            Log in
+          Connexion
           </Link>
         </li>
       )}

@@ -25,13 +25,13 @@ function ServiceList() {
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center">
                       <h5 className="text-dark">{service?.title} </h5>
-                      <p className="three-text">{service.description}</p>
+                      <p className="long-text">{service.description}</p>
                       <Link
                         to={`/services/${service._id}`}
                         className="btn btn-lg btn-info rounded-0 text-dark"
                         style={{ width: "max-content" }}
                       >
-                        Read more ...
+                        Savoir plus...
                       </Link>
                     </div>
                   </div>

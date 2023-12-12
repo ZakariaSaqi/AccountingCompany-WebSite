@@ -36,8 +36,8 @@ function Blog() {
             />
             <div className="container d-flex h-100 align-items-center">
               <div className="carousel-caption text-center">
-                <p className="mb-0">Home</p>
-                <h1 className="mt-0">Blog </h1>
+                <p className="mb-0">Accueil</p>
+                <h1 className="mt-0">Posts </h1>
               </div>
             </div>
           </div>

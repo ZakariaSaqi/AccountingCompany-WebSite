@@ -49,11 +49,11 @@ module.exports.getAllComments = asyncHandler(async (req, res) => {
 module.exports.deleteComment = asyncHandler(async (req, res) => {
 
     const comment = await Comment.findById(req.params.id);
-    if (!comment)  return res.status(404).json({ message: "Comment not found" });
+    if (!comment)  return res.status(404).json({ message: "Post non trouvé" });
 
     if (req.user.isAdmin || req.user.id === comment.user.toString()) {
       await Comment.findByIdAndDelete(req.params.id);
-      res.status(200).json({ message: "Your comment has been deleted !" });
+      res.status(200).json({ message: "Votre commentaire a été supprimé" });
     } else  res.status(403).json({ message: "Acces denied !" });
     
   });
@@ -64,9 +64,9 @@ module.exports.deleteComment = asyncHandler(async (req, res) => {
     if (error) return res.status(400).json({ message: error.message });
 
     const comment = await Comment.findById(req.params.id);
-    if (!comment) return res.status(404).json({ message: "Comment not found !" });
+    if (!comment) return res.status(404).json({ message: "Post non trouvé" });
 
-    if (req.user.id !== comment.user.toString()) res.status(403).json({ message: "Acces denied, not allowed !" });
+    if (req.user.id !== comment.user.toString()) res.status(403).json({ message: "Accès refusé, non autorisé" });
     
     const updateComment = await Comment.findByIdAndUpdate(
       req.params.id,

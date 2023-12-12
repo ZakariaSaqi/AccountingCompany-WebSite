@@ -45,17 +45,15 @@ function Home() {
             />
             <div className="container">
               <div className="carousel-caption">
-                <h1>Example headline.</h1>
-                <p>
-                  Some representative placeholder content for the first slide of
-                  the carousel.
+                <h1>Naviguez vers le Succès, Assurez l'Avenir</h1>
+                <p>Donnez de l'ampleur à votre entreprise avec nos services comptables et juridiques experts.
                 </p>
                 <p>
                   <Link
                     className="btn btn-lg btn-info rounded-0 text-dark"
-                    href="#"
+                   to="/login"
                   >
-                    Sign up now
+                   Connectez-vous maintenant
                   </Link>
                 </p>
               </div>
@@ -69,17 +67,16 @@ function Home() {
             />
             <div className="container">
               <div className="carousel-caption">
-                <h1>Another example headline.</h1>
+                <h1>Précision, Expertise, Excellence</h1>
                 <p>
-                  Some representative placeholder content for the second slide
-                  of the carousel.
+                Là où la clarté financière rencontre les conseils stratégiques pour une entreprise prospère.
                 </p>
                 <p>
                   <Link
                     className="btn btn-lg btn-info rounded-0 text-dark"
-                    href="#"
+                   to="/services"
                   >
-                    Learn more
+                    En savoir plus
                   </Link>
                 </p>
               </div>
@@ -94,17 +91,16 @@ function Home() {
 
             <div className="container">
               <div className="carousel-caption ">
-                <h1>One more for good measure.</h1>
+                <h1>Semer, Cultiver, Prospérer avec Nous</h1>
                 <p>
-                  Some representative placeholder content for the third slide of
-                  this carousel.
+                Libérez tout le potentiel de votre entreprise agricole avec nos solutions de gestion holistiques.
                 </p>
                 <p>
                   <Link
                     className="btn btn-lg btn-info rounded-0 text-dark"
-                    href="#"
+                    to="/about"
                   >
-                    Browse gallery
+                    En savoir plus
                   </Link>
                 </p>
               </div>
@@ -151,10 +147,9 @@ function Home() {
                   <i class="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
-                  <h4 className="text-dark-blue fw-bold">Market Analysis</h4>
+                  <h4 className="text-dark-blue fw-bold">Expertise Fiable</h4>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia
+                  Précision et professionnalisme assurés grâce à notre équipe expérimentée et sectorielle.
                   </p>
                 </div>
               </div>
@@ -163,10 +158,9 @@ function Home() {
                   <i class="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
-                  <h4 className="text-dark-blue fw-bold">Accounting Advisor</h4>
+                  <h4 className="text-dark-blue fw-bold">Solutions Personnalisées </h4>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia
+                  Des solutions adaptées à votre entreprise, unique en son genre, pour favoriser le succès.
                   </p>
                 </div>
               </div>
@@ -176,11 +170,10 @@ function Home() {
                 </div>
                 <div className="text pl-4">
                   <h4 className="text-dark-blue fw-bold">
-                    General Consultancy
+                  Intégration Technologique
                   </h4>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia
+                  Rationalisation des processus grâce à notre avancée technologique pour des décisions éclairées en temps réel.
                   </p>
                 </div>
               </div>
@@ -189,10 +182,9 @@ function Home() {
                   <i class="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
-                  <h4 className="text-dark-blue ">Structured Assessment</h4>
+                  <h4 className="text-dark-blue ">Support Complet</h4>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia
+                  Au-delà de la comptabilité et du juridique, un soutien complet, de la formation aux conseils proactifs.
                   </p>
                 </div>
               </div>

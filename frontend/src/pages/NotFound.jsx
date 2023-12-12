@@ -11,11 +11,11 @@ function NotFound() {
         <h1 className="display-1 fw-bold text-dark-blue">404</h1>
         <p className="fs-3">
           {" "}
-          <span className="text-danger">Opps!</span> Page not found.
+          <span className="text-danger">Opps!</span> Page nont trouvé.
         </p>
-        <p className="lead">The page you’re looking for doesn’t exist.</p>
+        <p className="lead">La page que vous recherchez n'existe pas.</p>
         <Link className="btn btn-lg btn-info rounded-0 text-dark" to="/">
-          Go To Home
+        Aller à l'accueil
         </Link>
       </div>
     </div>

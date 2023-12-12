@@ -15,13 +15,15 @@ function CommentList({ comments }) {
 
   const deleteCommentHandler = (commentId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this comment !",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce commentaire !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
+      
     }).then((result) => {
       if (result.isConfirmed) {
        dispatch(deleteCommentBlog(commentId))
@@ -30,7 +32,7 @@ function CommentList({ comments }) {
   };
   return (
     <div>
-      <h2 class="text-dark-blue mb-4 ">Comments <span style={{fontSize:"20px",color:"grey"}}>{comments?.length}</span></h2>
+      <h2 class="text-dark-blue mb-4 ">Commentaires <span style={{fontSize:"20px",color:"grey"}}>{comments?.length}</span></h2>
       <ul class="list-unstyled">
         {comments?.map((comment) => (
           <li class="media d-flex mb-3 flex-row align-items-center">

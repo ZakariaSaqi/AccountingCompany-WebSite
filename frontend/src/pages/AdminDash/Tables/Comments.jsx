@@ -16,13 +16,14 @@ function Comments() {
   }, [dispatch, search, dispatch]);
   const deleteCommentHandler = (commentId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this comment !",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce commentaire !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteCommentBlog(commentId));
@@ -45,7 +46,7 @@ function Comments() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-4">
-              <h2>Comments list </h2>
+            <h2>Liste des commentaires </h2>
             </div>
 
             <form className=" col-md-8 form-group mb-4 d-flex">
@@ -67,10 +68,10 @@ function Comments() {
             <thead>
               <tr>
                 <th scope="col">N°</th>
-                <th scope="col">Phtot</th>
-                <th scope="col">User</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Nom</th>
                 <th scope="col">Date</th>
-                <th scope="col">Comment</th>
+                <th scope="col">Commentaire</th>
 
                 <th scope="col" className="cell-actions">
                   Actions
@@ -79,7 +80,7 @@ function Comments() {
             </thead>
            {  allComments.length === 0 ? (
              <td colSpan={6}>
-             <p className="text-center">No results found.</p>
+              <p className="text-center">Aucun résultat trouvé</p>
            </td>
            )
             : (

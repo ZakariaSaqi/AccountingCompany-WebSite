@@ -16,7 +16,7 @@ module.exports.signUp = asyncHandler(async (req, res) => {
   }
 
   let user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(400).json({ message: "Email already used !" });
+  if (user) return res.status(400).json({ message: "Email déjà utilisé." });
 
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -41,14 +41,14 @@ module.exports.signUp = asyncHandler(async (req, res) => {
   // 3- putting link in html temp
   const htmlTemplate = `
      <div>
-     <p>Click in the link below to verify your email ! </p>
-     <a href="${link}">Verify Email</a>
+     <p>"Cliquez sur le lien ci-dessous pour vérifier votre e-mail.</p>
+     <a href="${link}">Vérifier l'e-mail</a>
      </div>`;
   // 4- Sendi mail to user
-  await sendEmail(user.email, "Verify Your Email", htmlTemplate);
+  await sendEmail(user.email, "Email verification", htmlTemplate);
   // 5- response to the client
   res.status(201).json({
-    message: "We sent to you an email, Please verify your email inbox !",
+    message: "Nous vous avons envoyé un e-mail. Veuillez vérifier votre boîte de réception",
   });
 });
 
@@ -57,14 +57,14 @@ module.exports.logIn = asyncHandler(async (req, res) => {
   if (error) return res.status(400).json({ message: error.message });
 
   let user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).json({ message: "Email not exists !" });
+  if (!user) return res.status(400).json({ message: "L'adresse e-mail n'existe pas " });
 
   const isPasswordMatch = await bcrypt.compare(
     req.body.password,
     user.password
   );
   if (!isPasswordMatch)
-    return res.status(400).json({ message: "Password incorrect !" });
+    return res.status(400).json({ message: "Mot de passe incorrect !" });
 
   if (!user.isAccountVerified) {
     let verificationToken = await VerificationToken.findOne({
@@ -79,13 +79,13 @@ module.exports.logIn = asyncHandler(async (req, res) => {
     }
     const link = `${process.env.CLIENT_DOMAIN}/users/${user._id}/verify/${verificationToken.token}`;
     const htmlTemplate = `
-         <div>
-         <p>Click in the link below to verify your email ! <>
-         <a href="${link}">Verify Email</a>
-         </div>`;
-    await sendEmail(user.email, "Verify Your Email", htmlTemplate);
+    <div>
+    <p>"Cliquez sur le lien ci-dessous pour vérifier votre e-mail.</p>
+    <a href="${link}">Vérifier l'e-mail</a>
+    </div>`;
+    await sendEmail(user.email, "Email verification", htmlTemplate);
     res.status(400).json({
-      message: "We sent to you an email, Please verify your email inbox !",
+      message: "Nous vous avons envoyé un e-mail. Veuillez vérifier votre boîte de réception",
     });
   }
 
@@ -105,7 +105,7 @@ module.exports.logIn = asyncHandler(async (req, res) => {
 module.exports.verifyUserAccount = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.userId);
     if (!user) {
-      return res.status(400).json({ message: "Invalid link!" });
+      return res.status(400).json({ message: "Lien invalide" });
     }
   
     const verificationToken = await VerificationToken.findOne({
@@ -114,7 +114,7 @@ module.exports.verifyUserAccount = asyncHandler(async (req, res) => {
     });
   
     if (!verificationToken) {
-      return res.status(400).json({ message: "Invalid link!" });
+      return res.status(400).json({ message: "Lien invalide" });
     }
   
     user.isAccountVerified = true;
@@ -125,6 +125,6 @@ module.exports.verifyUserAccount = asyncHandler(async (req, res) => {
       token: req.params.token,
     });
   
-    res.status(200).json({ message: "Your Account Verified." });
+    res.status(200).json({ message: "Votre compte vérifié." });
   });
   

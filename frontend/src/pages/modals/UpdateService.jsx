@@ -15,13 +15,13 @@ function UpdateService({ service }) {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    if (title.trim() === "") return toast.error("Service title is required");
+    if (title.trim() === "") return toast.error("Le titre du service est requis.");
     if (description.trim() === "")
-      return toast.error("Service description is required");
+      return toast.error("La description du service est requise.");
     const success = dispatch(updateService({ title, description }, service?._id));
 
     if (success) {
-      toast.success("Serice Updated succesfuly");
+      toast.success("Service modifié avec succès.");
       document.getElementById("updateService").click();
     }
   };
@@ -40,7 +40,7 @@ function UpdateService({ service }) {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="updateServiceLabel">
-                Update Service
+              Modifier le service
               </h5>
               <p className="icon">
                 <i
@@ -56,7 +56,7 @@ function UpdateService({ service }) {
                   <div className="col-md-6">
                     <div className="form-group mb-4">
                       <label className="label text-dark" for="name">
-                        Title
+                        Titre
                       </label>
                       <input
                         value={title}
@@ -65,7 +65,7 @@ function UpdateService({ service }) {
                         className="form-control shadow-none rounded-0"
                         name="title"
                         id="title"
-                        placeholder="Title"
+                        placeholder="Titre"
                       />
                     </div>
                   </div>
@@ -93,13 +93,13 @@ function UpdateService({ service }) {
                         class="btn btn-lg btn-secondary rounded-0 text-dark"
                         data-dismiss="modal"
                       >
-                        Close
+                        Annuler
                       </button>
                       <button
                         type="submit"
                         className="btn btn-lg btn-info rounded-0 text-dark"
                       >
-                        Update
+                        Modifier
                       </button>
                     </div>
                   </div>

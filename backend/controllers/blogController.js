@@ -14,7 +14,7 @@ const { Comment } = require("../models/Comment");
 
 module.exports.createBlog = asyncHandler(async (req, res) => {
   if (!req.file)
-    return res.status(400).json({ message: "No image provided !" });
+    return res.status(400).json({ message: "Aucune image fournie" });
 
   const { error } = validateCreateBlog(req.body);
   if (error) return res.status(400).json({ message: error.message });
@@ -79,7 +79,7 @@ module.exports.getBlog = asyncHandler(async (req, res) => {
   ])
   .populate("comments")
 
-  if (!blog) return res.status(404).json({ message: "Blog not found !" });
+  if (!blog) return res.status(404).json({ message: "Post non trouvé" });
 
   res.status(200).json(blog);
 });
@@ -92,7 +92,7 @@ module.exports.getBlogsCount = asyncHandler(async (req, res) => {
 module.exports.deleteBlog = asyncHandler(async (req, res) => {
   const blog = await Blog.findById(req.params.id);
 
-  if (!blog) return res.status(404).json({ message: "Blog not found !" });
+  if (!blog) return res.status(404).json({ message: "Post non trouvé" });
 
   if (req.user.isAdmin || req.user.id === blog.user.toString()) {
     await cloudinaryRemoveImage(blog.image.publicId);
@@ -100,8 +100,8 @@ module.exports.deleteBlog = asyncHandler(async (req, res) => {
     await Blog.findByIdAndDelete(req.params.id);
     await Comment.deleteMany({ blogId : blog._id})
 
-    res.status(200).json({ message: "Your blog has been deleted !" });
-  } else return res.status(403).json({ message: "Access denied !" });
+    res.status(200).json({ message: "Votre blog a été supprimé" });
+  } else return res.status(403).json({ message: "Accès refusé" });
 });
 
 module.exports.updateBlog = asyncHandler(async (req, res) => {
@@ -109,10 +109,10 @@ module.exports.updateBlog = asyncHandler(async (req, res) => {
   if (error) return res.status(400).json({ message: error.message });
 
   const blog = await Blog.findById(req.params.id);
-  if (!blog) return res.status(404).json({ message: "Blog not found !" });
+  if (!blog) return res.status(404).json({ message: "Post non trouvé" });
 
   if (req.user.id !== blog.user.toString())
-    return res.status(403).json({ message: "Access denied, Not allowed !" });
+    return res.status(403).json({ message: "Accès refusé, non autorisé" });
 
   const updateBlog = await Blog.findByIdAndUpdate(
     req.params.id,
@@ -130,13 +130,13 @@ module.exports.updateBlog = asyncHandler(async (req, res) => {
 
 module.exports.updateBlogImage = asyncHandler(async (req, res) => {
   if (!req.file)
-    return res.status(400).json({ message: "No image provided !" });
+    return res.status(400).json({ message: "Aucune image fournie" });
 
   const blog = await Blog.findById(req.params.id);
-  if (!blog) return res.status(404).json({ message: "Blog not found !" });
+  if (!blog) return res.status(404).json({ message: "Post non trouvé" });
 
   if (req.user.id !== blog.user.toString())
-    return res.status(403).json({ message: "Access denied, Not allowed !" });
+    return res.status(403).json({ message: "Accès refusé, non autorisé" });
 
   await cloudinaryRemoveImage(blog.image.publicId);
 
@@ -165,7 +165,7 @@ module.exports.toggleLikeBlog = asyncHandler(async (req, res) => {
     const loggedUserId = req.user.id
 
     let blog = await Blog.findById(idPost)
-    if (!blog) return res.status(404).json({ message: "Blog not found !" });
+    if (!blog) return res.status(404).json({ message: "Post non trouvé" });
 
     const isLiked = blog.likes.find( user => user.toString() === loggedUserId)
     

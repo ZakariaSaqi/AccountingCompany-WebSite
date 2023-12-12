@@ -9,7 +9,7 @@ const { Blog } = require("../models/Blog");
 
 module.exports.getAllUsers = asyncHandler(async (req, res) => {
   if (!req.user.isAdmin)
-    return res.status(403).json({ message: "Not allow only for admin !" });
+    return res.status(403).json({ message: "Accès refusé, non autorisé" });
     const {  search } = req.query;
     let query = {};
     if (search) {
@@ -36,7 +36,7 @@ module.exports.getUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
     .select("-password")
     .populate("blogs");
-  if (!user) return res.status(404).json({ message: "User not found !" });
+  if (!user) return res.status(404).json({ message: "Utilisateur non trouvé" });
 
   res.status(200).json(user);
 });
@@ -72,7 +72,7 @@ module.exports.updateUserProfile = asyncHandler(async (req, res) => {
 
 module.exports.profilePhotoUpload = asyncHandler(async (req, res) => {
 
-  if (!req.file) res.status(400).json({ message: "No file provided" });
+  if (!req.file) res.status(400).json({ message: "Aucune image fournie" });
 
   const imagePath = path.join(__dirname, `../images/${req.file.filename}`);
   const result = await cloudinaryUploadImage(imagePath);
@@ -87,7 +87,7 @@ module.exports.profilePhotoUpload = asyncHandler(async (req, res) => {
   await user.save()
 
   res.status(200).json({
-    message: "Your profile photo uploaded successfully",
+    message: "Votre photo de profil a été téléchargée avec succès",
     profilePhoto: {
       url: result.secure_url,
       publicID: result.public_id,
@@ -100,7 +100,7 @@ module.exports.profilePhotoUpload = asyncHandler(async (req, res) => {
 
 module.exports.deleteUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id)
-    if (!user) return res.status(404).json({ message: "User not found !" });
+    if (!user) return res.status(404).json({ message: "Utilisateur non trouvé" });
 
     const blogs = await Blog.find({user : user._id})
     const publicIds = blogs?.map((blog ) => blog.image.publicId)
@@ -113,6 +113,6 @@ module.exports.deleteUserProfile = asyncHandler(async (req, res) => {
     
     await User.findByIdAndDelete(req.params.id)
 
-    res.status(200).json({ message : "Account has been deleted !"})
+    res.status(200).json({ message : "Le compte a été supprimé"})
 
 })

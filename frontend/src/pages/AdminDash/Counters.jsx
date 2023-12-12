@@ -68,7 +68,7 @@ function Counters() {
         <CounterBox
         iconClass="fa-solid fa-users text-dark-blue"
             initialValue={userCount}
-            label="Users"
+            label="Utilisateurs"
           />
            
         </div>
@@ -76,21 +76,21 @@ function Counters() {
         <CounterBox
          iconClass="fa-solid fa-newspaper text-dark-blue"
             initialValue={blogsCount}
-            label="Blogs"
+            label="Posts"
           />
         </div>
         <div className="col-md-2 d-flex justify-content-center">
         <CounterBox
          iconClass="fa-solid fa-comments text-dark-blue"
             initialValue={commentsCount}
-            label="Comments"
+            label="Commentaires"
           />
         </div>
         <div className="col-md-2 d-flex justify-content-center">
         <CounterBox
         iconClass="fa-solid fa-handshake-simple text-dark-blue"
             initialValue={testimoniesCount}
-            label="Testimonies"
+            label="Témoignages"
           />
         </div>
         

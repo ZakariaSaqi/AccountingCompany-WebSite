@@ -43,33 +43,33 @@ function Signin() {
     <div className="forms container  d-flex justify-content-center align-items-center pt-5 w-100 h-100">
       <div className="py-5 " style={{ maxWidth: "400px" }}>
 	  <ToastContainer position="top-center" />
-        <h2 className="mb-4 text-center">Sign up now !</h2>
+        <h2 className="mb-4 text-center">S'inscrire maintenant</h2>
         <form onSubmit={signupFormHandler}>
           <div className="row d-flex">
             <div className="form-group mb-4">
               <label className="label text-dark" for="name">
-                First Name
+                Nom
               </label>
               <input
                 type="text"
                 className="form-control shadow-none rounded-0"
                 name="name"
                 id="name"
-                placeholder="First Name"
+                placeholder="Nom"
 				onChange={(e) => setFirstname(e.target.value)}
               />
             </div>
 
             <div className="form-group mb-4">
               <label className="label text-dark" for="name">
-                Last Name
+                Prénom
               </label>
               <input
                 type="text"
                 className="form-control shadow-none rounded-0"
                 name="name"
                 id="name"
-                placeholder="Last Name"
+                placeholder="Prénom"
 				onChange={(e) => setLastname(e.target.value)}
               />
             </div>
@@ -105,18 +105,18 @@ function Signin() {
             <div className="form-group mb-4 d-flex justify-content-center">
               <input
                 type="submit"
-                value="Sign Up"
+                value="S'inscrire"
                 className="btn btn-lg btn-info rounded-0 text-dark"
               />
             </div>
             <div className="form-group mb-4 d-flex flex-column align-items-center">
               <p>
-                Already have an account ?
+              Vous avez déjà un compte ?
                 <Link className="link" to="/login">
                   {" "}
-                  Log In{" "}
+                  Connexion{" "}
                 </Link>
-                now .
+                maintenant .
               </p>
             </div>
           </div>

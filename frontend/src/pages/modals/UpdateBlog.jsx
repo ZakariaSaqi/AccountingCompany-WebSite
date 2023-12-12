@@ -15,13 +15,13 @@ function UpdateBlog({ blog }) {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    if (title.trim() === "") return toast.error("Blog title is required");
+    if (title.trim() === "") return toast.error("Le titre de post est requis.");
     if (description.trim() === "")
-      return toast.error("Blog description is required");
+      return toast.error("La description de post est requise.");
     const success = dispatch(updateBlog({ title, description }, blog?._id));
 
     if (success) {
-      toast.success("Blog Updated succesfuly");
+      toast.success("Post modifié avec succès.");
       document.getElementById("updateBlog").click();
     }
   };
@@ -40,7 +40,7 @@ function UpdateBlog({ blog }) {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="updateBlogLabel">
-                Update blog
+                Modifier post
               </h5>
               <p className="icon">
                 <i
@@ -56,7 +56,7 @@ function UpdateBlog({ blog }) {
                   <div className="col-md-6">
                     <div className="form-group mb-4">
                       <label className="label text-dark" for="name">
-                        Title
+                        Titre
                       </label>
                       <input
                         value={title}
@@ -65,7 +65,7 @@ function UpdateBlog({ blog }) {
                         className="form-control shadow-none rounded-0"
                         name="title"
                         id="title"
-                        placeholder="Title"
+                        placeholder="Titre"
                       />
                     </div>
                   </div>
@@ -93,13 +93,13 @@ function UpdateBlog({ blog }) {
                         class="btn btn-lg btn-secondary rounded-0 text-dark"
                         data-dismiss="modal"
                       >
-                        Close
+                        Annuler
                       </button>
                       <button
                         type="submit"
                         className="btn btn-lg btn-info rounded-0 text-dark"
                       >
-                        Update
+                        Modifier
                       </button>
                     </div>
                   </div>

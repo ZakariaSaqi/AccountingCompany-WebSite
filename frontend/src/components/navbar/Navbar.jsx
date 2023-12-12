@@ -23,8 +23,8 @@ function Navbar() {
                 <div className="d-flex justify-content-center align-items-center">
                   <i className="fa-solid fa-location-dot me-3 p-2 py-3 iconHeight"></i>
                   <div className="d-none d-lg-block">
-                    <span className="fw-medium">Opening Hour</span> <br />
-                    Mon-Fri : 8:00 - 9:00
+                  <span className="fw-medium">Adresse</span> <br/>
+                  Quartier EL-QODSS N°32
                   </div>
                 </div>
               </div>
@@ -32,8 +32,8 @@ function Navbar() {
                 <div className="d-flex justify-content-center align-items-center">
                   <i className="fa-solid fa-phone me-3 p-2 py-3 iconHeight"></i>
                   <div className="d-none d-lg-block">
-                    <span className="fw-medium">Call Us</span>
-                    <br /> +1-800-123-1234
+                    <span className="fw-medium">Téléphone</span>
+                    <br />   + 212 661 506 209
                   </div>
                 </div>
               </div>
@@ -41,8 +41,8 @@ function Navbar() {
                 <div className="d-flex justify-content-center align-items-center">
                   <i className="fa-solid fa-envelope me-3 p-2 py-3 iconHeight"></i>
                   <div className="d-none d-lg-block">
-                    <span className="fw-medium">Email Us</span>
-                    <br /> example@emmail.com
+                    <span className="fw-medium">Email</span>
+                    <br /> BETAECO4u@gmail.com
                   </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@ function Navbar() {
                 aria-label="Toggle navigation"
               >
                 <span className="navbar-toggler-icon"></span>
-                Menu
+               
               </button>
               <div
                 className="collapse navbar-collapse justify-content-between"
@@ -78,28 +78,28 @@ function Navbar() {
                      to="/"
                      activeclassname="active" exact="true"
                     >
-                      Home
+                      Accueil
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink className="nav-link px-lg-3" activeclassname="active" exact="true" to="/about">
-                      About
+                    À propos
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink className="nav-link px-lg-3" activeclassname="active" exact="true" to="/services">
-                      Services
+                    Services
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink className="nav-link px-lg-3" activeclassname="active" exact="true" to="/blogs">
-                      Blog
+                      Posts
                     </NavLink>
                   </li>
                   
                   <li className="nav-item">
                     <NavLink className="nav-link px-lg-3" activeclassname="active" exact="true" to="/contact">
-                      Contacts
+                    Contact
                     </NavLink>
                   </li>
                   { user?.isAdmin && (

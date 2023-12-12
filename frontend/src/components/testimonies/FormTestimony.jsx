@@ -10,7 +10,7 @@ export default function FormTestimony() {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     if (text.trim() === "")
-      return toast.error("Testimony description is required");
+      return toast.error("La description du témoignage est obligatoire.");
     dispatch(addTestimony({ text }));
     setText("")
     document.getElementById("addTestimony").click();
@@ -27,7 +27,7 @@ export default function FormTestimony() {
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title" id="addTestimonyLabel">
-            Express your testimony
+          Exprimez votre témoignage
           </h5>
           <p className="icon">
             <i
@@ -65,13 +65,13 @@ export default function FormTestimony() {
                     className="btn btn-lg btn-secondary rounded-0 text-dark"
                     data-dismiss="modal"
                   >
-                    Close
+                    Annuler
                   </button>
                   <button
                     type="submit"
                     className="btn btn-lg btn-info rounded-0 text-dark"
                   >
-                    Submite
+                    Envoyer
                   </button>
                 </div>
               </div>

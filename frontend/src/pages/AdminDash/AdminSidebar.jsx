@@ -18,7 +18,7 @@ function SidebarTest() {
               className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
             >
                 BETA
-              <span className=" ms-md-2 ms-sm-0  d-none d-sm-inline">Accounting</span>
+              <span className=" ms-md-2 ms-sm-0 ps-2 d-none d-sm-inline"> ECO</span>
             </NavLink>
             <hr />
             <ul className="nav nav-pills flex-column mt-4">
@@ -30,7 +30,7 @@ function SidebarTest() {
                   exact
                 >
                   <i className="fa-solid fa-house"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Home</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Accueil</span>
                 </NavLink>
               </li>
               <li className="nav-item py-2 py-sm-0">
@@ -41,7 +41,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-newspaper"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Blogs</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Posts</span>
                 </NavLink>
               </li>
               <li className="nav-item py-2 py-sm-0">
@@ -63,7 +63,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-users"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Users</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Utilisateurs</span>
                 </NavLink>
               </li>
               <li className="nav-item py-2 py-sm-0">
@@ -74,7 +74,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-comments"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline">Comments</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Commentaires</span>
                 </NavLink>
               </li>
               <li className="nav-item py-2 py-sm-0">
@@ -85,7 +85,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-handshake-simple "></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline">Testimonies</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Témoignages</span>
                 </NavLink>
               </li>
               <hr />
@@ -97,7 +97,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-square-plus"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Add Service</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Ajouter service</span>
                 </NavLink>
               </li>
               <li className="nav-item py-2 py-sm-0">
@@ -108,7 +108,7 @@ function SidebarTest() {
                   exact
                 >
                   <i class="fa-solid fa-file-circle-plus"></i>
-                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Create Blog</span>
+                  <span className="ms-lg-4 ms-md-2 ms-sm-0  d-none d-sm-inline"> Créer post</span>
                 </NavLink>
               </li>
             </ul>

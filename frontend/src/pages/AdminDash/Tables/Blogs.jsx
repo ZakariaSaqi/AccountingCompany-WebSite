@@ -20,13 +20,15 @@ function Blogs() {
 
   const deleteBlogtHandler = (blogId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this post!",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce post !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
+      
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteBlog(blogId));
@@ -46,7 +48,7 @@ function Blogs() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-4">
-              <h2>Blogs list </h2>
+              <h2>Liste des posts </h2>
             </div>
 
             <form className=" col-md-8 form-group mb-4 d-flex">
@@ -56,7 +58,7 @@ function Blogs() {
                 className="form-control shadow-none rounded-0"
                 name="search"
                 id="search"
-                placeholder="Search ..."
+                placeholder="Recherche ..."
                 onChange={(e) => setSearch(e.target.value)}
               />
               <span 
@@ -71,14 +73,14 @@ function Blogs() {
               <tr>
                 <th scope="col">N°</th>
                 <th scope="col">Image</th>
-                <th scope="col">Title</th>
+                <th scope="col">Titre</th>
                 <th scope="col">Description</th>
                 <th scope="col" className="cell-actions">Actions</th>
               </tr>
             </thead>
            { blogs.length === 0 ? (
             <td colSpan={5}>
-              <p className="text-center">No results found.</p>
+              <p className="text-center">Aucun résultat trouvé</p>
             </td>
            ) : (
              <tbody>
@@ -92,13 +94,13 @@ function Blogs() {
                <span className="long-text">{blog.description}</span></td>
                <td className=" d-flex flex-row ">
                  <Link to={`/blogs/blogDetails/${blog._id}`} className="btn btn-info rounded-0 m-1">
-                   View 
+                 Voir 
                  </Link>
 
                  <button 
                   onClick={() => deleteBlogtHandler(blog._id)}
                   className="btn btn-danger rounded-0 m-1">
-                   Delete 
+                   Supprimer 
                  </button>
                </td>
              </tr>

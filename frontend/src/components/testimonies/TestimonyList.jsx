@@ -39,7 +39,7 @@ function TestimonyList() {
     <div className="container" data-aos="fade-right">
       {user ? (
         <div className="d-flex flex-column align-items-center justify-content-center py-4">
-          <h2>Express your testimony</h2>
+          <h2>Exprimez votre témoignage.</h2>
           <button
             data-toggle="modal"
             data-target="#addTestimony"
@@ -51,11 +51,11 @@ function TestimonyList() {
           </button>
         </div>
       ) : (
-        <p className="text-center">Please log in to express your testimony!</p>
+        <p className="text-center">Veuillez vous connecter pour exprimer votre témoignage !</p>
       )}
       {testimonies.length > 0 ? (
         <>
-          <h2>Testimonies</h2>
+          <h2>Témoignages</h2>
           <Carousel showDots={false} responsive={responsive} className="py-3">
             {testimonies.map((testimony, index) => {
               if (testimony.isAccepted) {

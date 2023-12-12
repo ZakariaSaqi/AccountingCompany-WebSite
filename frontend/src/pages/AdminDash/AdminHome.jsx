@@ -40,7 +40,7 @@ function AdminHome() {
       <Counters />
       <section className="blog ">
         <div className="container">
-          <h2>Latest Blogs</h2>
+          <h2>Derniers posts</h2>
         <BlogList blogs={last3Blogs}/>
       </div>
       </section>

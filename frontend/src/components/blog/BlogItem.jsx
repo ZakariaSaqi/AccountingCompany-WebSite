@@ -35,7 +35,7 @@ function BlogItem({ blog }) {
             className="btn btn-lg btn-info rounded-0 text-dark"
             style={{ width: "max-content" }}
           >
-            Read more ...
+           Savoir plus...
           </Link>
         </div>
       </div>

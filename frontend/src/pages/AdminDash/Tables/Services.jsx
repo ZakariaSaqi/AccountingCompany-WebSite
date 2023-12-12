@@ -18,13 +18,14 @@ function Services() {
   }, [dispatch, search]);
   const deleteServicetHandler = (cateId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this category!",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce service !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteService(cateId));
@@ -43,7 +44,7 @@ function Services() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-4">
-              <h2>Service list </h2>
+            <h2>Liste des services </h2>
             </div>
             <form className=" col-md-8 form-group mb-4 d-flex">
               <input
@@ -63,7 +64,7 @@ function Services() {
           <table className="table table-hover">
             <thead>
               <tr>
-                <th scope="col">Title</th>
+                <th scope="col">Titre</th>
                 <th scope="col">Description</th>
                 <th scope="col" className="cell-actions">
                   Actions
@@ -72,7 +73,7 @@ function Services() {
             </thead>
            { services.length === 0 ? (
              <td colSpan={3}>
-             <p className="text-center">No results found.</p>
+              <p className="text-center">Aucun résultat trouvé</p>
            </td>
            )
            : (
@@ -90,7 +91,7 @@ function Services() {
                     onClick={() => deleteServicetHandler(service?._id)}
                     className="btn btn-danger rounded-0 m-1"
                   >
-                    Delete
+                    Supprimer
                   </button>
                 </td>
               </tr>

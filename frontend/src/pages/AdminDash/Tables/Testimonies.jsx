@@ -22,13 +22,14 @@ function Testimonies() {
 
   const accepteTestimonyHandler = async (testimonyId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this !",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Accepte it!",
+        title: "Êtes-vous sûr(e) ?",
+        text: "Ce témoignage sera affiché pour les visiteurs.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Annuler",
+        confirmButtonText: "Oui, Accepter !",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(accepteTestimony(testimonyId));
@@ -39,13 +40,14 @@ function Testimonies() {
  
   const deleteTestimonytHandler = (testimonyId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this testimony!",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce témoignage !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteTestimony(testimonyId));
@@ -65,7 +67,7 @@ function Testimonies() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-4">
-              <h2>Testimonies list </h2>
+              <h2>Liste des témoignages  </h2>
             </div>
 
             <form className=" col-md-8 form-group mb-4 d-flex">
@@ -88,8 +90,8 @@ function Testimonies() {
               <tr>
                 <th scope="col">N°</th>
                 <th scope="col">Photo</th>
-                <th scope="col">Witness</th>
-                <th scope="col">Testimony</th>
+                <th scope="col">Témoin</th>
+                <th scope="col">Témoignage</th>
                 <th scope="col">Status</th>
                 <th scope="col" className="cell-actions">
                   Actions
@@ -98,7 +100,7 @@ function Testimonies() {
             </thead>
             { testimonies.length === 0 ? (
              <td colSpan={6}>
-             <p className="text-center">No results found.</p>
+             <p className="text-center">Aucun résultat trouvé</p>
            </td>
            )
               : (
@@ -140,7 +142,7 @@ function Testimonies() {
                        onClick={() => deleteTestimonytHandler(testimony._id)}
                        className="btn btn-danger rounded-0 m-1"
                      >
-                       Delete
+                       Supprimer
                      </button>
                     <button
                      
@@ -151,7 +153,7 @@ function Testimonies() {
                       value="Comment"
                       className="btn btn-info rounded-0 m-1"
                     >
-                      View
+                      Voir
                     </button>
                     <div
                       class="modal fade"
@@ -165,7 +167,7 @@ function Testimonies() {
                         <div class="modal-content">
                           <div class="modal-header">
                             <h5 class="modal-title" id="ViewTestimonyLabel">
-                              Testimony 
+                            Témoignage
                             </h5>
                             <p className="icon">
                               <i
@@ -199,7 +201,7 @@ function Testimonies() {
                                   class="btn btn-lg btn-secondary rounded-0 text-dark"
                                   data-dismiss="modal"
                                 >
-                                  Close
+                                  Annuler
                                 </button>
                               </div>
                             </div>

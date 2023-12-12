@@ -25,7 +25,7 @@ function Profile() {
 
   const updateImageSubmitHandler = (e) => {
     e.preventDefault();
-    if (!file) return toast.error("Select profile photo");
+    if (!file) return toast.error("Sélectionner une photo de profil");
     const formData = new FormData();
     formData.append("image", file);
     dispatch(uploadProfilePhoto(formData));
@@ -44,13 +44,14 @@ function Profile() {
 
   const deleteProfileHandler = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this account !",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas annuler la suppression de ce compte !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Oui, supprimez-le !",
+      cancelButtonText :"Annuler"
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteProfile(user?._id));
@@ -119,7 +120,7 @@ function Profile() {
               </h5>
               <div className="d-flex">
                 <p className="pe-3" style={{ fontSize: "13px" }}>
-                  Joined {formatDate(profile?.createdAt)}
+                Rejoint {formatDate(profile?.createdAt)}
                 </p>
               </div>
               {user?._id === profile?._id && (
@@ -163,7 +164,7 @@ function Profile() {
           className="btn w-100 btn-lg btn-danger
          rounded-0 text-light"
         >
-          Delete your account
+         Supprimer votre compte
         </button>
       )}
     </div>

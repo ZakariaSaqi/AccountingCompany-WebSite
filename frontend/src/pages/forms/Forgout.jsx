@@ -14,7 +14,7 @@ function Forgout() {
     <div className="forms container  d-flex justify-content-center">
       <ToastContainer position="top-center" />
       <div className="py-5 " style={{ maxWidth: "400px" }}>
-        <h2 className="mb-4 text-center">Please enter your Email !</h2>
+        <h2 className="mb-4 text-center">Veuillez entrer votre adresse e-mail </h2>
         <form onSubmit={ForgoutFormHandler}> 
           <div className="row d-flex">
             <div className="form-group mb-4">
@@ -35,7 +35,7 @@ function Forgout() {
             <div className="form-group mb-4 d-flex justify-content-center">
               <input
                 type="submit"
-                value="Submit"
+                value="Envoyer"
                 className="btn btn-lg btn-info rounded-0 text-dark"
               />
             </div>

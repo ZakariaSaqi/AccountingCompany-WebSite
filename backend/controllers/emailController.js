@@ -12,6 +12,6 @@ module.exports.sentEmail = asyncHandler(async (req, res) => {
      </div>`;
   await sendEmail(process.env.EMAIL, req.body.subject, htmlTemplate);
   res.status(201).json({
-    message: "Email send successfully !",
+    message: "Email envoyé avec succès",
   });
 });

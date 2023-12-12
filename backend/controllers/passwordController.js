@@ -12,7 +12,7 @@ module.exports.sendResetPasswordLink = asyncHandler(async (req, res) => {
   }
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return res.status(404).json({ message: "User email not found !" });
+    return res.status(404).json({ message: "Email utilisatuer non trouvé" });
   }
   let verificationToken = await VerificationToken.findOne({ userId: user._id });
   if (!verificationToken) {
@@ -26,26 +26,26 @@ module.exports.sendResetPasswordLink = asyncHandler(async (req, res) => {
 
   const htmlTemplate = `
      <div>
-     <p>Click in the link below to reset your password account ! </p>
-     <a href="${link}">Reset Password</a>
+     <p>"Cliquez sur le lien ci-dessous pour vérifier votre e-mail.</p>
+     <a href="${link}">Réinitialiser le mot de passe</a>
      </div>`;
-  await sendEmail(user.email, "Reset Password", htmlTemplate);
+  await sendEmail(user.email, "Réinitialiser le mot de passe", htmlTemplate);
   res.status(201).json({
-    message: "We sent to you an email, Please check your email inbox !",
+    message: "Nous vous avons envoyé un e-mail. Veuillez vérifier votre boîte de réception",
   });
 });
 
 module.exports.getResetPasswordLink = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.userId);
   if (!user) {
-    return res.status(404).json({ message: "Invalide link !" });
+    return res.status(404).json({ message: "Lien invalide" });
   }
   const verificationToken = await VerificationToken.findOne({
     userId: user._id,
     token: req.params.token,
   });
   if (!verificationToken) {
-    return res.status(404).json({ message: "Invalide link !" });
+    return res.status(404).json({ message: "Lien invalide" });
   }
    
   res.status(200).json({ message: "Valid url !"});
@@ -58,7 +58,7 @@ module.exports.resetPassword = asyncHandler(async (req, res) => {
   }
   const user = await User.findById(req.params.userId);
   if (!user) {
-    return res.status(400).json({ message: " user Invalide Link !" });
+    return res.status(400).json({ message: "Lien invalide" });
   }
 
   const verificationToken = await VerificationToken.findOne({
@@ -66,7 +66,7 @@ module.exports.resetPassword = asyncHandler(async (req, res) => {
     token: req.params.token,
   });
   if (!verificationToken) {
-    return res.status(404).json({ message: "token Invalide link !" });
+    return res.status(404).json({ message: "Lien invalide" });
   }
   if(!user.isAccountVerified){
     user.isAccountVerified = true
@@ -76,5 +76,5 @@ module.exports.resetPassword = asyncHandler(async (req, res) => {
   user.password = hashedPassword
   await user.save()
   await VerificationToken.deleteOne({ userId: user._id, token: req.params.token });
-  res.status(200).json({ message: "Password reset succesfully, Please Log in." });
+  res.status(200).json({ message: "Réinitialisation du mot de passe réussie. Veuillez vous connecter." });
   }) ;

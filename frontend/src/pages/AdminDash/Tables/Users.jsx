@@ -17,13 +17,14 @@ function Users() {
   }, [isProfileDeleted, search, dispatch]);
   const deleteProfileHandler = (userId) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this account !",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce utilisateur !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteProfile(userId));
@@ -46,7 +47,7 @@ function Users() {
         <div className="container p-5">
           <div className="row">
             <div className="col-md-4">
-              <h2>User list </h2>
+            <h2>Liste des utilisateurs </h2>
             </div>
 
             <form className=" col-md-8 form-group mb-4 d-flex">
@@ -69,9 +70,9 @@ function Users() {
               <tr>
                 <th scope="col">N°</th>
                 <th scope="col">Photo</th>
-                <th scope="col">Username</th>
+                <th scope="col">Nom</th>
                 {/* <th scope="col">Email</th> */}
-                <th scope="col">Joined</th>
+                <th scope="col">Rejoint</th>
                 <th scope="col" className="cell-actions">
                   Actions
                 </th>
@@ -79,7 +80,7 @@ function Users() {
             </thead>
             { profiles.length === 0 ? (
              <td colSpan={5}>
-             <p className="text-center">No results found.</p>
+             <p className="text-center">Aucun résultat trouvé</p>
            </td>
            )
                : (
@@ -113,14 +114,14 @@ function Users() {
                         to={`/profile/${profile._id}`}
                         className="btn btn-info rounded-0 m-1"
                       >
-                        View
+                        Voir
                       </Link>
   
                       <button
                         onClick={() => deleteProfileHandler(profile._id)}
                         className="btn btn-danger rounded-0 m-1"
                       >
-                        Delete 
+                        Supprimer 
                       </button>
                     </td>
                   </tr>

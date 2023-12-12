@@ -22,7 +22,7 @@ function Login() {
     <div className="forms container  d-flex justify-content-center pt-5">
       <div className="py-5 " style={{ maxWidth: "400px" }}>
 	  <ToastContainer position="top-center" />
-        <h2 className="mb-4 text-center">Log in now !</h2>
+        <h2 className="mb-4 text-center">Connectez-vous maintenant</h2>
         <form  onSubmit={LoginFormHandler}>
           <div className="row d-flex">
             <div className="form-group mb-4">
@@ -56,26 +56,26 @@ function Login() {
             <div className="form-group mb-4 d-flex justify-content-center">
               <input
                 type="submit"
-                value="Logn In"
+                value="Connexion"
                 className="btn btn-lg btn-info rounded-0 text-dark"
               />
             </div>
             <div className="form-group mb-4 d-flex flex-column align-items-center">
               <p>
-                Don't have an account ?
+              Vous n'avez pas de compte ?
                 <Link className="link" to="/signup">
-                  {" "}
-                  Sign Up{" "}
+                {" "}
+                S'inscrire   {" "}
                 </Link>
-                now .
+                maintenant.
               </p>
               <p>
-                Forgot password ?
+              Mot de passe oublié ?
                 <Link className="link" to="/forgoutPassword">
                   {" "}
-                  Reset{" "}
+                  Réinitialiser{" "}
                 </Link>
-                now .
+                maintenant.
               </p>
             </div>
           </div>

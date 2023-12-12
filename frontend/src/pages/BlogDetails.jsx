@@ -46,7 +46,7 @@ function BlogDetails() {
 
   const updateImageSubmitHandler = async (e) => {
     e.preventDefault();
-    if (!file) return toast.error("Blog image is required");
+    if (!file) return toast.error("L'image du post est obligatoire.");
     const formData = new FormData();
     formData.append("image", file);
     await dispatch(updateBlogImage(formData, blog?._id));
@@ -54,13 +54,14 @@ function BlogDetails() {
 
   const deleteBlogHandler = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this blog!",
+      title: "Êtes-vous sûr(e) ?",
+      text: "Vous ne pourrez pas revenir en arrière pour ce post !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Annuler",
+      confirmButtonText: "Oui, supprimez-le !",
     }).then(async (result) => {
       if (result.isConfirmed) {
         await dispatch(deleteBlog(blog?._id));
@@ -92,7 +93,7 @@ function BlogDetails() {
             <div className="container d-flex h-100 align-items-center">
               <div className="carousel-caption text-center">
                 <p className="mb-0">Home</p>
-                <h1 className="mt-0">Blog </h1>
+                <h1 className="mt-0">Post </h1>
               </div>
             </div>
           </div>
@@ -111,7 +112,7 @@ function BlogDetails() {
               {user?.isAdmin && (
                 <form className="mt-2" onSubmit={updateImageSubmitHandler}>
                   <label htmlFor="image" className=" px-1 rounded">
-                    Update blog image
+                    Modifier l'image du post
                   </label>
                   <div className="form-group mb-4 d-flex">
                     <input
@@ -176,9 +177,11 @@ function BlogDetails() {
               </div>
             </div>
             <UpdateBlog blog={blog} />
-           {
-            user ?  <CommentForm blogId={blog._id} /> : <p>Please log in to write a comment !</p>
-           }
+            {user ? (
+              <CommentForm blogId={blog._id} />
+            ) : (
+              <p>Veuillez vous connecter pour écrire un commentaire !</p>
+            )}
             <CommentList comments={blog?.comments} />
           </div>
           <BlogSideBar />

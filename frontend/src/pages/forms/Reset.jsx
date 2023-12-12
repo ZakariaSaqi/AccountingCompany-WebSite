@@ -44,12 +44,12 @@ function Reset() {
                 className="bi bi-exclamation-circle text-danger "
                 style={{ fontSize: "5rem" }}
               ></i>
-              <h3 className="text-success text-danger">Not found </h3>
+              <h3 className="text-success text-danger">Introuvable </h3>
             </div>
           </>
         ) : (
           <>
-            <h2 className="mb-4 text-center">Reset Password !</h2>
+            <h2 className="mb-4 text-center">Réinitialiser Password !</h2>
             <form onSubmit={ResetFormHandler}>
               <div className="row d-flex">
                 <div className="form-group mb-4">
@@ -68,7 +68,7 @@ function Reset() {
 
                 <div className="form-group mb-4">
                   <label className="label text-dark" for="subject">
-                    Password Confirmation
+                    Password Confirmation 
                   </label>
                   <input
                     type="password"
@@ -83,7 +83,7 @@ function Reset() {
                 <div className="form-group mb-4 d-flex justify-content-center">
                   <input
                     type="submit"
-                    value="Reset"
+                    value="Réinitialiser"
                     className="btn btn-lg btn-info rounded-0 text-dark"
                   />
                 </div>
