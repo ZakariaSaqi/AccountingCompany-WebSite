@@ -5,6 +5,7 @@ import { commentReducer } from "./slices/commentSlice"
 import { serviceReducer } from "./slices/serviceSlice"
 import { userReducer } from "./slices/userSlice"
 import { testimonyReducer } from "./slices/testimonySlice"
+import { passwordReducer } from "./slices/passwordSlice"
 const store = configureStore({
     reducer : {
         auth : authReducer,
@@ -12,7 +13,8 @@ const store = configureStore({
         service :serviceReducer,
         comment : commentReducer,
         user : userReducer,
-        testimony : testimonyReducer
+        testimony : testimonyReducer,
+        password : passwordReducer
     }
 })
 export default store

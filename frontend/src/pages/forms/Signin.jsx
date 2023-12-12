@@ -55,7 +55,7 @@ function Signin() {
                 className="form-control shadow-none rounded-0"
                 name="name"
                 id="name"
-                placeholder="Name"
+                placeholder="First Name"
 				onChange={(e) => setFirstname(e.target.value)}
               />
             </div>
@@ -69,7 +69,7 @@ function Signin() {
                 className="form-control shadow-none rounded-0"
                 name="name"
                 id="name"
-                placeholder="Name"
+                placeholder="Last Name"
 				onChange={(e) => setLastname(e.target.value)}
               />
             </div>

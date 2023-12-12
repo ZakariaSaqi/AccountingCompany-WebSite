@@ -33,6 +33,8 @@ import AddService from "./pages/AdminDash/AddService";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SingleService from "./pages/SingleService";
+import VerifyEmail from "./pages/VerifyEmail";
+import NotFound from "./pages/NotFound";
 
 AOS.init({duration : 1000});
 
@@ -52,6 +54,8 @@ function NavigationNavbar() {
     "/forgoutPassword",
     "/resetPassword",
     "/AdminDash",
+    "/users/:userId/verify/:token",
+    "*"
   ].includes(location.pathname);
 
   return isNavbarVisible ? <Navbar /> : null;
@@ -73,6 +77,8 @@ function NavigationFooter() {
     "/forgoutPassword",
     "/resetPassword",
     "/AdminDash",
+    "/users/:userId/verify/:token",
+    "*"
   ].includes(location.pathname);
   return isFooterVisible ? <Footer /> : null;
 }
@@ -122,7 +128,9 @@ function App() {
           element={!user ? <Login /> : <Navigate to="/" />}
         />
         <Route path="/forgoutPassword" element={<Forgout />} />
-        <Route path="/resetPassword" element={<Reset />} />
+        <Route path="/resetPassword/:userId/:token" element={<Reset />} />
+        <Route path="/users/:userId/verify/:token" element={!user ? <VerifyEmail /> : <Navigate to="/" />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <NavigationFooter />
     </BrowserRouter>
