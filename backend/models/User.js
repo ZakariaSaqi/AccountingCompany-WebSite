@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const joi = require("joi")
+const passworComplexity = require("joi-password-complexity")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const UserSchema = new mongoose.Schema({
@@ -50,7 +51,7 @@ function validateSignupUser(obj){
         firstname : joi.string().trim().required(),
         lastname : joi.string().trim().required(),
         email : joi.string().trim().email().required(),
-        password : joi.string().trim().required()
+        password : passworComplexity().required()
     })
     return schema.validate(obj)
 }
@@ -73,7 +74,7 @@ function validateEamil(obj){
 
 function validateNewPassword(obj){
     const schema = joi.object({
-        password : joi.string().trim().required()
+        password : passworComplexity().required()
     })
     return schema.validate(obj)
 }
@@ -82,7 +83,7 @@ function validateUpdateUser(obj){
         firstname : joi.string().trim(),
         lastname : joi.string().trim(),
         email : joi.string().trim().email(),
-        password : joi.string().trim()
+        password : passworComplexity()
     })
     return schema.validate(obj)
 }

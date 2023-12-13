@@ -1,11 +1,24 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
+// npm install helmet express-rate-limit express-hpp
 const express = require("express");
+const xss = require("xss-clean")
+const helmet = require("helmet")
+const hpp = require("hpp")
+const ratelimiting = require("express-rate-limit")
 
+const { errorHandler, notFound } = require("./middlewares/error");
 const cors = require("cors")
 const app = express(); // init app
 app.use(express.json()); // middlewares
 
+app.use(helmet()) // security headers
+app.use(hpp()) // http param pollution
+app.use(xss()) //protect api (cross site scripting)
+app.use(ratelimiting({
+  windowMs : 10 * 60 * 1000, //100 req in 10mun
+  max : 100,
+}))
 
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
@@ -29,3 +42,6 @@ app.use("/api/services", require("./routes/serviceRoute"))
 app.use("/api/testimonies", require("./routes/testimonyRoute"))
 app.use("/api/sendEmail", require("./routes/emailRoute"))
 app.use("/api/password", require("./routes/passwordRoute"))
+
+app.use(notFound)
+app.use(errorHandler)
