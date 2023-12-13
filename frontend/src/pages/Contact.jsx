@@ -50,7 +50,7 @@ function Contact() {
           </div>
         </div>
       </div>
-      <section className="py-5 bg-light">
+      <section className="py-5 bg-light" data-aos="fade-right">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-12">
