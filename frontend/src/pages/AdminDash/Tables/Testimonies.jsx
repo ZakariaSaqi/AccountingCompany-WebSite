@@ -81,7 +81,7 @@ function Testimonies() {
                 onChange={(e) => setSearch(e.target.value)}
               />
               <span className="btn btn-lg btn-info rounded-0 text-dark-blue">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </span>
             </form>
           </div>
@@ -156,31 +156,31 @@ function Testimonies() {
                       Voir
                     </button>
                     <div
-                      class="modal fade"
+                      className="modal fade"
                       id={`ViewTestimony-${testimony._id}`}
-                      tabindex="-1"
+                      tabIndex="-1"
                       role="dialog"
                       aria-labelledby="ViewTestimonyLabel"
                       aria-hidden="true"
                     >
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="ViewTestimonyLabel">
+                      <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="ViewTestimonyLabel">
                             Témoignage
                             </h5>
                             <p className="icon">
                               <i
-                                class="fa-solid fa-x close  hover"
+                                className="fa-solid fa-x close  hover"
                                 data-dismiss="modal"
                                 aria-label="Close"
                               ></i>
                             </p>
                           </div>
-                          <div class="modal-body">
+                          <div className="modal-body">
                             <div className="col-md-12">
                               <div className="form-group mb-4">
-                                <label className="label text-dark" for="#">
+                                <label className="label text-dark">
                                   Description
                                 </label>
                                 <textarea
@@ -195,10 +195,10 @@ function Testimonies() {
                               </div>
                             </div>
                             <div className="col-md-12">
-                              <div class="modal-footer">
+                              <div className="modal-footer">
                                 <button
                                   type="button"
-                                  class="btn btn-lg btn-secondary rounded-0 text-dark"
+                                  className="btn btn-lg btn-secondary rounded-0 text-dark"
                                   data-dismiss="modal"
                                 >
                                   Annuler

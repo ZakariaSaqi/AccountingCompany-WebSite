@@ -64,7 +64,7 @@ function Blogs() {
               <span 
                 className="btn btn-lg btn-info rounded-0 text-dark-blue"
               >
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </span>
             </form>
           </div>

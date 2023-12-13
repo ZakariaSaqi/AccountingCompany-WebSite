@@ -18,7 +18,7 @@ function Forgout() {
         <form onSubmit={ForgoutFormHandler}> 
           <div className="row d-flex">
             <div className="form-group mb-4">
-              <label className="label text-dark" for="email">
+              <label className="label text-dark" htmlFor="email">
                 Email Address
               </label>
               <input

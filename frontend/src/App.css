@@ -149,7 +149,9 @@
  .footer .d-block:hover {
     color: #0dcaf0;
  }
-
+.active-link {
+   background-color: red;
+}
 
 /* Add these styles to your CSS file */
 
@@ -181,8 +183,13 @@
  
 
  nav .pagination .page-item .page-link:hover {
-    color: #0dcaf0;
+    color: #030f27;
  }
+
+ .active > .page-link, .page-link.active {
+   background-color: #0dcaf0 ;
+color: #030F27;}
+   
 
  .forms {
     min-height: 70vh;

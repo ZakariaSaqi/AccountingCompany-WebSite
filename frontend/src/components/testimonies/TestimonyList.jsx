@@ -59,7 +59,7 @@ function TestimonyList() {
           <Carousel showDots={false} responsive={responsive} className="py-3">
             {testimonies.map((testimony, index) => {
               if (testimony.isAccepted) {
-                return <TestimonyItem index={index} testimony={testimony} />;
+                return <TestimonyItem key={index} index={index} testimony={testimony} />;
               }
             })}
           </Carousel>

@@ -15,10 +15,6 @@ app.use(express.json()); // middlewares
 app.use(helmet()) // security headers
 app.use(hpp()) // http param pollution
 app.use(xss()) //protect api (cross site scripting)
-app.use(ratelimiting({
-  windowMs : 10 * 60 * 500, //100 req in 10mun
-  max : 1000,
-}))
 
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {

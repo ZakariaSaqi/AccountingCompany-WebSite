@@ -29,33 +29,33 @@ function UpdateBlog({ blog }) {
   return (
     <div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="updateBlog"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="updateBlogLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="updateBlogLabel">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="updateBlogLabel">
                 Modifier post
               </h5>
               <p className="icon">
                 <i
-                  class="fa-solid fa-x close  hover"
+                  className="fa-solid fa-x close  hover"
                   data-dismiss="modal"
                   aria-label="Close"
                 ></i>
               </p>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <form onSubmit={formSubmitHandler}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group mb-4">
-                      <label className="label text-dark" for="name">
+                      <label className="label text-dark" htmlFor="name">
                         Titre
                       </label>
                       <input
@@ -71,7 +71,7 @@ function UpdateBlog({ blog }) {
                   </div>
                   <div className="col-md-12">
                     <div className="form-group mb-4">
-                      <label className="label text-dark" for="#">
+                      <label className="label text-dark" htmlFor="#">
                         Description
                       </label>
                       <textarea
@@ -87,10 +87,10 @@ function UpdateBlog({ blog }) {
                     </div>
                   </div>
                   <div className="col-md-12">
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                       <button
                         type="button"
-                        class="btn btn-lg btn-secondary rounded-0 text-dark"
+                        className="btn btn-lg btn-secondary rounded-0 text-dark"
                         data-dismiss="modal"
                       >
                         Annuler

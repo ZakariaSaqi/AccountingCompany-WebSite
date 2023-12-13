@@ -39,7 +39,7 @@ function AddService() {
             <form onSubmit={formSubmitHandler}>
               <div className="row d-flex">
                 <div className="form-group mb-4">
-                  <label className="label text-dark" for="email">
+                  <label className="label text-dark" htmlFor="email">
                     Titre
                   </label>
                   <input
@@ -53,7 +53,7 @@ function AddService() {
                 </div>
 
                 <div className="form-group mb-4">
-                  <label className="label text-dark" for="subject">
+                  <label className="label text-dark" htmlFor="subject">
                     Description
                   </label>
                   <textarea

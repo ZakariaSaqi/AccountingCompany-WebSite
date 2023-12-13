@@ -18,10 +18,10 @@ function BlogSideBar() {
   return (
     <div className="col-md-3 ">
       <div>
-        <h2 class="text-dark-blue my-4 ">Derniers posts</h2>
-        <ul class="list-unstyled">
-          {blogs.map(blog => (
-            <li class="media d-flex flex-row">
+        <h2 className="text-dark-blue my-4 ">Derniers posts</h2>
+        <ul className="list-unstyled">
+          {blogs.map((blog, index) => (
+            <li key={index} className="media d-flex flex-row">
             <img
               className="rounded img-fluid mb-3 me-4  "
               style={{
@@ -32,7 +32,7 @@ function BlogSideBar() {
               src={blog?.image.url}
               alt=""
             />
-            <div class="media-body">
+            <div className="media-body">
               <h5 className="text-dark " style={{ fontSize: "16px" }}>
               {blog?.title}
               </h5>

@@ -30,8 +30,8 @@ function Footer() {
                       <div className="col-md-4 mb-md-0 mb-4">
                         <h2 className="footer-heading">Services</h2>
                         <ul className="list-unstyled">
-                          {services.map((service) => (
-                            <li>
+                          {services.map((service, index) => (
+                            <li key={index}>
                               <Link className="py-1 d-block">
                                 {service.title}
                               </Link>

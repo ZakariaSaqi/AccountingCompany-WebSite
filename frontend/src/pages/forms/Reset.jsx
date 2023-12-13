@@ -53,7 +53,7 @@ function Reset() {
             <form onSubmit={ResetFormHandler}>
               <div className="row d-flex">
                 <div className="form-group mb-4">
-                  <label className="label text-dark" for="subject">
+                  <label className="label text-dark" htmlFor="subject">
                     Password
                   </label>
                   <input
@@ -67,7 +67,7 @@ function Reset() {
                 </div>
 
                 <div className="form-group mb-4">
-                  <label className="label text-dark" for="subject">
+                  <label className="label text-dark" htmlFor="subject">
                     Password Confirmation 
                   </label>
                   <input

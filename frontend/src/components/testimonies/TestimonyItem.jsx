@@ -20,8 +20,8 @@ function TestimonyItem({index, testimony}) {
                     <h5 className="text-dark-blue mb-2" >{testimony.witnessName}</h5>
                     <div className="testimony-text">
                     <p >
-                    <i class="fa-solid fa-quote-left me-1"></i> {testimony.text}
-                    <i class="fa-solid fa-quote-right  ms-1"></i>
+                    <i className="fa-solid fa-quote-left me-1"></i> {testimony.text}
+                    <i className="fa-solid fa-quote-right  ms-1"></i>
                     </p>
                     </div>
                   </div>

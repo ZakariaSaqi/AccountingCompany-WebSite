@@ -26,7 +26,7 @@ function Login() {
         <form  onSubmit={LoginFormHandler}>
           <div className="row d-flex">
             <div className="form-group mb-4">
-              <label className="label text-dark" for="email">
+              <label className="label text-dark" htmlFor="email">
                 Email Address
               </label>
               <input
@@ -40,7 +40,7 @@ function Login() {
             </div>
 
             <div className="form-group mb-4">
-              <label className="label text-dark" for="subject">
+              <label className="label text-dark" htmlFor="subject">
                 Password
               </label>
               <input

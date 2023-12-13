@@ -144,7 +144,7 @@ function Home() {
               </div>
               <div className="services-2 w-100 d-flex">
                 <div className="icon text-dark-blue  me-4 d-flex align-items-center justify-content-center">
-                  <i class="fa-solid fa-chart-simple"></i>
+                  <i className="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
                   <h4 className="text-dark-blue fw-bold">Expertise Fiable</h4>
@@ -155,7 +155,7 @@ function Home() {
               </div>
               <div className="services-2 w-100 d-flex">
                 <div className="icon  text-dark-blue me-4 d-flex align-items-center justify-content-center">
-                  <i class="fa-solid fa-chart-simple"></i>
+                  <i className="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
                   <h4 className="text-dark-blue fw-bold">Solutions Personnalisées </h4>
@@ -166,7 +166,7 @@ function Home() {
               </div>
               <div className="services-2 w-100 d-flex">
                 <div className="icon  text-dark-blue me-4 d-flex align-items-center justify-content-center">
-                  <i class="fa-solid fa-chart-simple"></i>
+                  <i className="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
                   <h4 className="text-dark-blue fw-bold">
@@ -179,7 +179,7 @@ function Home() {
               </div>
               <div className="services-2 w-100 d-flex">
                 <div className="icon  text-dark-blue me-4 d-flex align-items-center justify-content-center">
-                  <i class="fa-solid fa-chart-simple"></i>
+                  <i className="fa-solid fa-chart-simple"></i>
                 </div>
                 <div className="text pl-4">
                   <h4 className="text-dark-blue ">Support Complet</h4>

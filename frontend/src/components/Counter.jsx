@@ -31,9 +31,9 @@ function CounterBox({ iconClass, initialValue, label }) {
 
   return (
     <div className="counter col-md-4">
-      <div  class="single_counter py-2 mt-1 d-flex align-items-center flex-column">
+      <div  className="single_counter py-2 mt-1 d-flex align-items-center flex-column">
       <i className={iconClass}></i>
-      <h2 class=" text-dark-blue">{count}</h2>
+      <h2 className=" text-dark-blue">{count}</h2>
         <p>{label}</p>
       </div>
     </div>

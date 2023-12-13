@@ -32,10 +32,10 @@ function CommentList({ comments }) {
   };
   return (
     <div>
-      <h2 class="text-dark-blue mb-4 ">Commentaires <span style={{fontSize:"20px",color:"grey"}}>{comments?.length}</span></h2>
-      <ul class="list-unstyled">
-        {comments?.map((comment) => (
-          <li class="media d-flex mb-3 flex-row align-items-center">
+      <h2 className="text-dark-blue mb-4 ">Commentaires <span style={{fontSize:"20px",color:"grey"}}>{comments?.length}</span></h2>
+      <ul className="list-unstyled">
+        {comments?.map((comment, index) => (
+          <li key={index} className="media d-flex mb-3 flex-row align-items-center">
             <img
               className="rounded-circle img-fluid mb-3 me-3 profile-photo "
               style={{
@@ -46,7 +46,7 @@ function CommentList({ comments }) {
               src={comment.commenteProfilePhoto}
               alt="Profile Photo"
             />
-            <div class="media-body w-100">
+            <div className="media-body w-100">
               <div className="d-flex justify-content-between">
                 <h6 className="text-dark p-0 m-0">{comment.commenterName}</h6>
                 <p
@@ -69,11 +69,11 @@ function CommentList({ comments }) {
                       data-target="#UpdateComment"
                       data-whatever="@mdo"
                     >
-                      <i class="hover fa-solid fa-pen-to-square"></i>
+                      <i className="hover fa-solid fa-pen-to-square"></i>
                     </p>
                     <p className="icon"
                       onClick={() => deleteCommentHandler(comment?._id)}>
-                      <i class="hover fa-solid fa-trash ps-3"></i>
+                      <i className="hover fa-solid fa-trash ps-3"></i>
                     </p>
                   </div>
                 )}

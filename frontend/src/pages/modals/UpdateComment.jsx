@@ -23,32 +23,32 @@ function UpdateComment({updateComment}) {
   return (
     <div>
     <div
-      class="modal fade"
+      className="modal fade"
       id="UpdateComment"
-      tabindex="-1"
+      tabIndex="-1"
       role="dialog"
       aria-labelledby="updateCommentLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="updateCommentLabel">
+      <div className="modal-dialog" role="document">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="updateCommentLabel">
               Update comment
             </h5>
            <p className="icon">
-           <i class="fa-solid fa-x close  hover"
+           <i className="fa-solid fa-x close  hover"
               data-dismiss="modal"
               aria-label="Close"></i>
            </p>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <form onSubmit={formSubmitHandler}
             >
               <div className="row">
                 <div className="col-md-12">
                   <div className="form-group mb-4">
-                    <label className="label text-dark" for="#">
+                    <label className="label text-dark" htmlFor="#">
                     Comment
                     </label>
                     <textarea
@@ -64,10 +64,10 @@ function UpdateComment({updateComment}) {
                   </div>
                 </div>
                 <div className="col-md-12">
-                  <div class="modal-footer">
+                  <div className="modal-footer">
             <button
               type="button"
-              class="btn btn-lg btn-secondary rounded-0 text-dark"
+              className="btn btn-lg btn-secondary rounded-0 text-dark"
               data-dismiss="modal"
             >
               Close
