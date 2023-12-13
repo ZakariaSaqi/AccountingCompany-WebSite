@@ -1,7 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-// npm install helmet express-rate-limit express-hpp
 const express = require("express");
+// npm install helmet express-rate-limit express-hpp
 const xss = require("xss-clean")
 const helmet = require("helmet")
 const hpp = require("hpp")
@@ -16,8 +16,8 @@ app.use(helmet()) // security headers
 app.use(hpp()) // http param pollution
 app.use(xss()) //protect api (cross site scripting)
 app.use(ratelimiting({
-  windowMs : 10 * 60 * 1000, //100 req in 10mun
-  max : 100,
+  windowMs : 10 * 60 * 500, //100 req in 10mun
+  max : 1000,
 }))
 
 mongoose.connect(process.env.MONGO_URL)
