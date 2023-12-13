@@ -13,9 +13,9 @@ function ServiceList() {
     <section className=" bg-white my-5">
       <ToastContainer position="top-center" />
       <div className="container">
-        <div className="row">
+        <div className="row" >
           {services.map((service, index) => (
-            <div key={index} className="card col-md-4 d-flex  my-2 border-0 ">
+            <div data-aos="fade-right" key={index} className="card col-md-4 d-flex  my-2 border-0 ">
               <div className="d-block">
                 <div className="media-body d-flex flex-column ">
                   <i

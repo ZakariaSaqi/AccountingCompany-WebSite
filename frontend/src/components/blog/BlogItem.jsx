@@ -7,7 +7,7 @@ function formatDate(dateString) {
 
 function BlogItem({ blog }) {
   return (
-    <div >
+    <div data-aos="fade-right">
       <img className="rounded" src={blog?.image.url} alt=""
        style={{ width: "100%", height: "200px", objectFit: "cover" }} />
       <div className="card-body">

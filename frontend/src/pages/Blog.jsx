@@ -45,7 +45,7 @@ function Blog() {
       </div>
     </div>
     <section className="blog my-4">
-        <div className="container">
+        <div className="container" >
           <BlogList blogs={blogs}/>
           <div className="row">
             <div className="col-12 d-flex justify-content-center">

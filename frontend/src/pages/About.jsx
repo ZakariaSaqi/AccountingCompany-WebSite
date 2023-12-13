@@ -30,7 +30,7 @@ function About() {
         </div>
       </div>
 
-      <section className="hero2">
+      <section className="hero2" data-aos="fade-right">
         <div className="container">
           <div className="row d-flex ">
             <div className="col-md-6 d-flex">
